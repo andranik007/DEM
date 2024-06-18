@@ -25,4 +25,8 @@ public class UserService {
         user.setRoles(Collections.singleton(Role.USER));
         userRepo.save(user);
     }
+
+    public User findByName(String name){
+        return userRepo.findByName(name);
+    }
 }

@@ -21,7 +21,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws  Exception{
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http
                 .authorizeHttpRequests((reuest)->reuest
                         .requestMatchers("/registration").permitAll()
@@ -29,7 +29,7 @@ public class SecurityConfig {
                 )
                 .formLogin((form)-> form
                         .loginPage("/login")
-                        .defaultSuccessUrl("/")
+                        .defaultSuccessUrl("/main")
                         .permitAll()
                 )
                 .logout(LogoutConfigurer::permitAll);
